@@ -1,0 +1,47 @@
+{
+  "name": "rollup-seed",
+  "version": "0.1.0",
+  "description": "A Starter-Kit for module development based on typescript, rollup and parcel.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c",
+    "prepublish": "npm run build",
+    "server": "parcel serve example/index.html",
+    "watch:rollup": "rollup -cw",
+    "start": "npm-run-all -p watch:rollup server"
+  },
+  "keywords": [
+    "rollup",
+    "parcel",
+    "typescript"
+  ],
+  "author": "Justinidlerz <zqc.sunny@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-typescript": "^7.6.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "@types/jest": "^24.0.18",
+    "jest": "^24.5.0",
+    "npm-run-all": "^4.1.5",
+    "rollup-plugin-typescript2": "^0.24.3",
+    "parcel": "^1.12.2",
+    "prettier": "^1.18.2",
+    "rollup": "^1.6.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "3.6.3"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "jest",
+      "git add"
+    ]
+  },
+  "dependencies": {}
+}
